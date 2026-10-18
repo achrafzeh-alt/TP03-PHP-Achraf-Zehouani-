@@ -1,14 +1,17 @@
 <?php
 
 // Exercice 4.2 : Formulaire en GET
-
-$Nom= $_GET['Nom'];
-$Prenom= $_GET['Prenom'];
-$Sexe= $_GET['Sexe'];
-if ($Sexe==='M'){
-    echo "Bonjour Monsieur ". $Prenom . " " . $Nom ;
-}else{
-    echo "Bonjour Madame " . $Prenom . " " . $Nom ;
+if (isset($_GET['sexe']) && isset($_GET['nom']) && isset($_GET['prenom'])) {
+    @$nom= $_GET['nom'];
+    @$prenom= $_GET['prenom'];
+    @$sexe= $_GET['sexe'];
+    if ($sexe==='M'){
+        echo "Bonjour Monsieur ". $prenom . " " . $nom ;
+    }else{
+        echo "Bonjour Madame " . $prenom . " " . $nom ;
+    }
+} else {
+    echo "Veuillez remplir le formulaire d'abord.";
 }
 
 /*

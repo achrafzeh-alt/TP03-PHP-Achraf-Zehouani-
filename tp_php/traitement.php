@@ -1,9 +1,9 @@
 <?php
 // Exercice 4.3 : Formulaire en POST
 
-$Nom = $_POST['Nom'];
-$Note_Info= $_POST['Note_Info'];
-$Note_Math= $_POST['Note_Math'];
+@$Nom = $_POST['Nom'];
+@$Note_Info= $_POST['Note_Info'];
+@$Note_Math= $_POST['Note_Math'];
 define('Note_Max', 20);
 define('Note_Min',0);
 
