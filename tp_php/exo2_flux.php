@@ -1,5 +1,5 @@
 <?php
-//Partie 2 : Structures de contrôle et boucles
+//Partie 02 : Structures de contrôle et boucles
     
     //Exercice 2.1 : `if / elseif / else`
     require('config.php');
@@ -17,7 +17,7 @@
         }
      }
 
-    echo "<br>";
+echo "<br>";
 
      echo "Note 17: " . mention(17);
      echo "Note 15: " . mention(15);

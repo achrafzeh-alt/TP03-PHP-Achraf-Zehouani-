@@ -1,5 +1,5 @@
 <?php 
-// Partie 0: Mise en place
+// Partie 01: Mise en place
     echo "Hello PHP <br>";
     // commentaire sur une ligne
     /*
