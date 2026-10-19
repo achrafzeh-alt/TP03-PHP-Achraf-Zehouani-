@@ -44,4 +44,36 @@ if(isset($_POST['Nom']) and isset($_POST['Note_Info']) and isset($_POST['Note_Ma
 */
 
 
+
+// Partie 5 : Fichiers CSV et JSON
+
+    //Exercice 5.1 : Écriture dans un fichier CSV
+if (isset($_POST['Nom']) && isset($_POST['Note_Info']) && isset($_POST['Note_Math'])) {
+    $Nom = $_POST['Nom'];
+    $Note_Info = $_POST['Note_Info'];
+    $Note_Math= $_POST['Note_Math'];
+
+    if ($Note_Info >= Note_Min && $Note_Info <= Note_Max && $Note_Math >= Note_Min && $Note_Math <= Note_Max) {
+
+        $donnees=[$Nom, $Note_Info, $Note_Math ];
+        $fichier=fopen("data/notes.csv", "a");
+        
+        if ($fichier !== false){
+            fputcsv($fichier, $donnees, ";");
+            fclose($fichier);
+            echo "Les donnees sont enregistres avec succes!";
+
+        }else{
+            echo "Erreur: Impossible d'ouvrir le fichier.";
+        }
+    }else{
+        exit;
+    }
+}
+
+/*
+Mode "w" (Write) : Vides et écrase le fichier dès son ouverture. Vous perdez l'historique et ne conservez que la dernière saisie.
+
+Mode "a" (Append) : Conserve les anciennes données et ajoute la nouvelle ligne à la fin du fichier.
+*/
 ?>
